@@ -1,0 +1,119 @@
+@use './variables.scss' as *;
+@use "sass:color";
+
+/*
+-
+CALLOUT THEMEING
+FROM PULL REQUEST: https://github.com/insanum/obsidian_gruvbox/pull/42/commits/9dca0cbb672ba2ce653c440ba12ec62dacdad704
+-
+*/
+
+.callout {
+  border: 1px 0.4 var(--border);
+  background-color: $depth5;
+  border-radius: 5px;
+  padding: 0 1rem;
+  overflow-y: hidden;
+  transition: max-height 0.3s ease;
+  box-sizing: border-box;
+
+  & > *:nth-child(2) {
+    margin-top: 0;
+  }
+
+  &[data-callout="note"] {
+    --color: $depth5;
+    --border: #448aff44;
+    --bg: #448aff10;
+  }
+
+  &[data-callout="abstract"] {
+    --color: #00b0ff;
+    --border: #00b0ff44;
+    --bg: #00b0ff10;
+  }
+
+  &[data-callout="info"],
+  &[data-callout="todo"] {
+    --color: #00b8d4;
+    --border: #00b8d444;
+    --bg: #00b8d410;
+  }
+
+  &[data-callout="tip"] {
+    --color: $aqua;
+    --border: #00bfa544;
+    --bg: #00bfa510;
+  }
+
+  &[data-callout="success"] {
+    --color: $depth4;
+    --border: #09ad7144;
+    --bg: #09ad7110;
+  }
+
+  &[data-callout="question"] {
+    --color: $depth3;
+    --border: #dba64244;
+    --bg: #dba64210;
+  }
+
+  &[data-callout="warning"] {
+    --color: $depth2;
+    --border: #db894244;
+    --bg: #db894210;
+  }
+
+  &[data-callout="failure"],
+  &[data-callout="danger"],
+  &[data-callout="bug"] {
+    --color: $depth1;
+    --border: #db424244;
+    --bg: #db424210;
+  }
+
+  &[data-callout="example"] {
+    --color: $depth6;
+    --border: #7a43b544;
+    --bg: #7a43b510;
+  }
+
+  &[data-callout="quote"] {
+    --color: $dark4;
+    --border: var(--lightgray);
+  }
+
+  &.is-collapsed > .callout-title > .fold {
+    transform: rotateZ(-90deg);
+  }
+}
+
+.callout-title {
+  display: flex;
+  gap: 5px;
+  padding: 1rem 0;
+  color: var(--color);
+
+  & .fold {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  & > .callout-title-inner > p {
+    color: var(--color);
+    margin: 0;
+  }
+}
+
+.callout-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  padding-top: 4px;
+}
+
+.callout-title-inner {
+  font-weight: 700;
+}

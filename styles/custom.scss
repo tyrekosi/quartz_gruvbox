@@ -1,0 +1,142 @@
+@use "./variables.scss" as *;
+
+
+$colors: (
+  "h1": $depth1,
+  "h2": $depth2,
+  "h3": $depth3,
+  "h4": $depth4,
+  "h5": $depth5,
+  "h6": $depth6
+);
+
+@each $header, $color in $colors {
+  #{$header} {
+    color: $color;
+
+    & span.math.math-inline span.katex {
+      color: $color!important;
+    }
+  }
+  
+  strong[depth="#{str-slice($header, 2)}"] {
+    color: $color;
+
+    & span.math.math-inline span.katex {
+      color: $color!important;
+    }
+  }
+}
+
+h1.page-title a {
+  color: $depth1!important;
+}
+
+/* 
+-
+TABLE OF CONTENTS THEMEING
+-
+*/
+
+button#toc svg.fold {
+  color: $depth3!important;
+}
+
+#toc-content {
+  @for $i from 0 through 6 {
+    & .depth-#{$i} {
+      padding-left: calc(1rem * #{$i});
+      & > a {
+        @if $i == 0 {
+          color: $depth2;
+        } @else if $i == 1 {
+          color: $depth3;
+        } @else if $i == 2 {
+          color: $depth4;
+        } @else if $i == 3 {
+          color: $depth5;
+        } @else if $i >= 4 {
+          color: $depth6;
+        }
+      }
+    }
+  }
+}
+
+
+/* 
+-
+EXPLORER THEMEING
+NOTE: YOU HAVE TO USE CUSTOM EXPLORER NODE
+-
+*/
+
+button#explorer {
+    color: $depth3 !important;
+
+    & h1 {
+      color: $depth3!important;
+    }
+}
+
+#explorer-content {
+    @for $i from 0 through 6 {
+        & .depth-#{$i} > div > .folder-container {
+            & > div > button > .folder-title, & > svg {
+                @if $i <= 1 {
+                    color: $depth2;
+                    fill: $depth2;
+                } @else if $i == 2 {
+                    color: $depth3;
+                    fill: $depth3;
+                } @else if $i == 3 {
+                    color: $depth4;
+                    fill: $depth4;
+                } @else if $i == 4 {
+                    color: $depth5;
+                    fill: $depth5;
+                } @else if $i >= 5 {
+                    color: $depth6;
+                    fill: $depth6;
+                }
+            }
+        }
+    }
+}
+
+/* 
+-
+MERMAID THEMEING
+-
+*/
+
+.mermaid .note
+{
+    fill: $dark3 !important;
+}
+
+.mermaid .actor
+{
+    fill: $dark2 !important;
+}
+
+.mermaid .loopLine
+{
+    stroke: $depth5 !important;
+}
+
+.mermaid .loopText>tspan,
+.mermaid .entityLabel
+{
+    fill: $depth1 !important;
+}
+
+.mermaid .exclude-range
+{
+    fill: $dark4 !important;
+}
+
+.mermaid .sequenceNumber
+{
+    fill: $dark0 !important;
+}
