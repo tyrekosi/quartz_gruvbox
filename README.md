@@ -6,13 +6,17 @@ Light mode is "functional" but barely works. Feel free to fix it up :)
 Disclaimer: I am bad at READMEs.
 
 # Make It Work
+Note: if you've already made modifications to your base.css or custom.css or really anything, what I recommend is to view the files side-by-side by using Git or something like [TextCompare](https://www.textcompare.org/css/) to figure out how to piece 'em together.
+
 1. Replace your files in the ./quartz/styles directory with those in the styles folder here.
 2. Replace ./quartz/components/ExplorerNode.tsx with the version provided here.
 3. Go into ./quartz/plugins/transformers and drop "strongdepth.ts" (provided in this repo as well, big surprise, very insane) in there.
 4. Still in ./quartz/plugins/transformers, go to index.ts (the index.ts INSIDE transformers) and append this at the end:
+   
 ```ts
 export { StrongDepth } from "./strongdepth"
 ```
+
 5. Return to ./ and navigate to quartz.config.ts, and do the following
    1. Replace colors
       ```ts
