@@ -11,25 +11,30 @@ $colors: (
 );
 
 @each $header, $color in $colors {
-  #{$header} {
+  article.popover-hint #{$header} {
     color: $color;
 
     & span.math.math-inline span.katex {
-      color: $color!important;
+      color: $color;
     }
   }
   
-  strong[depth="#{str-slice($header, 2)}"] {
+  article.popover-hint strong[depth="#{str-slice($header, 2)}"] {
     color: $color;
 
     & span.math.math-inline span.katex {
-      color: $color!important;
+      color: $color;
     }
   }
 }
 
 h1.page-title a {
-  color: $depth1!important;
+  color: $depth1;
+}
+
+article.popover-hint table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 
@@ -39,7 +44,7 @@ TABLE OF CONTENTS THEMEING
 */
 
 button#toc svg.fold {
-  color: $depth3!important;
+  color: $depth3;
 }
 
 #toc-content {
@@ -71,11 +76,11 @@ NOTE: YOU HAVE TO USE CUSTOM EXPLORER NODE
 -
 */
 
-button#explorer {
-    color: $depth3 !important;
+button#explorer[data-behavior="collapse"][data-savestate="true"] {
+    color: $depth3;
 
     & h1 {
-      color: $depth3!important;
+      color: $depth3;
     }
 }
 
@@ -102,41 +107,4 @@ button#explorer {
             }
         }
     }
-}
-
-/* 
--
-MERMAID THEMEING
--
-*/
-
-.mermaid .note
-{
-    fill: $dark3 !important;
-}
-
-.mermaid .actor
-{
-    fill: $dark2 !important;
-}
-
-.mermaid .loopLine
-{
-    stroke: $depth5 !important;
-}
-
-.mermaid .loopText>tspan,
-.mermaid .entityLabel
-{
-    fill: $depth1 !important;
-}
-
-.mermaid .exclude-range
-{
-    fill: $dark4 !important;
-}
-
-.mermaid .sequenceNumber
-{
-    fill: $dark0 !important;
 }
