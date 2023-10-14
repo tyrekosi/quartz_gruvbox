@@ -6,7 +6,7 @@ Light mode is "functional" but barely works. Feel free to fix it up :)
 Disclaimer: I am bad at READMEs.
 
 # Make It Work
-Note: if you've already made modifications to your base.css or custom.css or really anything, what I recommend is to view the files side-by-side by using Git or something like [TextCompare](https://www.textcompare.org/css/) to figure out how to piece 'em together.
+Note: if you've already made modifications to your custom.css or callouts.scss, what I recommend is to view the files side-by-side by using Git or something like [TextCompare](https://www.textcompare.org/css/) to figure out how to piece 'em together.
 
 1. Replace your files in the ./quartz/styles directory with those in the styles folder here.
 2. Replace ./quartz/components/ExplorerNode.tsx with the version provided here.
