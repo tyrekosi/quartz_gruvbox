@@ -37,14 +37,25 @@ article.popover-hint table {
   margin-right: auto;
 }
 
+.page > #quartz-body .sidebar.left {
+  width: $sidePanelWidth+50;
+}
+
 /* 
 -
 TABLE OF CONTENTS THEMEING
 -
 */
 
-button#toc svg.fold {
-  color: $depth3;
+button#toc {
+  & > h3 {
+    color: $depth3;
+
+  }
+
+  & > svg.fold[stroke-linejoin="round"] {
+    color: $depth3;
+  }
 }
 
 #toc-content {
@@ -68,11 +79,10 @@ button#toc svg.fold {
   }
 }
 
-
 /* 
 -
 EXPLORER THEMEING
-NOTE: YOU HAVE TO USE CUSTOM EXPLORER NODE
+NOTE: YOU HAVE TO USE CUSTOM EXPLORER NODE; IF NOT DELETE #explorer-content BLOCK
 -
 */
 
@@ -90,19 +100,14 @@ button#explorer[data-behavior="collapse"][data-savestate="true"] {
             & > div > button > .folder-title, & > svg {
                 @if $i <= 1 {
                     color: $depth2;
-                    fill: $depth2;
                 } @else if $i == 2 {
                     color: $depth3;
-                    fill: $depth3;
                 } @else if $i == 3 {
                     color: $depth4;
-                    fill: $depth4;
                 } @else if $i == 4 {
                     color: $depth5;
-                    fill: $depth5;
                 } @else if $i >= 5 {
                     color: $depth6;
-                    fill: $depth6;
                 }
             }
         }
