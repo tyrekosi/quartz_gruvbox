@@ -1,5 +1,5 @@
 # quartz_gruvbox
-Partial (read: very rough) adaption of [insanum/obsidian_gruvbox](https://github.com/insanum/obsidian_gruvbox) theme to learn Quartz. 
+Partial (read: very rough) adaption of [insanum/obsidian_gruvbox](https://github.com/insanum/obsidian_gruvbox) theme to learn Quartz. Features red/orange/yellow the most as that is what I'm partial to.
 
 Light mode is "functional" but barely works. Feel free to fix it up :)
 
