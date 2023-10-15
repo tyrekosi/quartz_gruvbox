@@ -7,7 +7,7 @@ You can modify the main theme variables in variables.scss and along with quartz.
 
 ExplorerNode.tsx is a slightly customized explorer node that just helps the theme with explorer stuff. If you don't want to replace your node, delete the block that starts with `#explorer-content` in custom.scss. You will not have the same explorer themeing though! StrongDepth is a slightly lighter version of my [quartz_depthifier](https://github.com/tyrekosi/quartz_depthifier) plugin. If you'd like to support depth assignment for other types of AST nodes, you can use that one in conjunction with the theme. If you just want strongs to match their header, don't worry about it.
 
-# Make It Work
+# Applying the theme
 Note: if you've already made modifications to your custom.css or callouts.scss, what I recommend is to view the files side-by-side by using Git or something like [TextCompare](https://www.textcompare.org/css/) to figure out how to piece 'em together.
 
 1. Replace your files in the ./quartz/styles directory with those in the styles folder here.
