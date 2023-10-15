@@ -1,4 +1,7 @@
 # quartz_gruvbox
+![Image 1 showing a Quartz website with the quartz_gruvbox theme applied.](README-IMAGES/Image1.png)
+![Image 2 showing a Quartz website with the quartz_gruvbox theme applied.](README-IMAGES/Image2.png)
+# What is it?
 Partial (read: very rough) adaption of [insanum/obsidian_gruvbox](https://github.com/insanum/obsidian_gruvbox) theme to learn Quartz. Features red/orange/yellow the most as that is what I'm partial to.
 
 Light mode does not work well. It will blind you. Be warned. Just use dark mode I promise.
