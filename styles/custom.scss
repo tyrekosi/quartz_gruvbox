@@ -1,6 +1,5 @@
 @use "./variables.scss" as *;
 
-
 $colors: (
   "h1": $depth1,
   "h2": $depth2,
@@ -18,12 +17,27 @@ $colors: (
       color: $color;
     }
   }
-  
-  article.popover-hint strong[depth="#{str-slice($header, 2)}"] {
+
+  article.popover-hint strong[depth="#{str-slice($header, 2)}"] { 
     color: $color;
 
     & span.math.math-inline span.katex {
       color: $color;
+    }
+  }
+
+  article.popover-hint a.external[depth="#{str-slice($header, 2)}"] {
+    color: $color;
+    background-color: var(--highlight);
+    padding: 0 0.1rem;
+    text-decoration: underline;
+    text-decoration-color: rgba($color, .6);
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+
+    & span.math.math-inline span.katex {
+      color: $color;
+      background-color: inherit;
     }
   }
 }
@@ -38,7 +52,11 @@ article.popover-hint table {
 }
 
 .page > #quartz-body .sidebar.left {
-  width: $sidePanelWidth+50;
+  width: $sidePanelWidth + 50px;
+
+  & > div.search {
+    max-width: $sidePanelWidth - 100px;
+  }
 }
 
 /* 
